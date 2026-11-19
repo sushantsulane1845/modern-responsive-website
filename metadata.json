@@ -1,0 +1,6 @@
+{
+  "name": "Alder & Vale",
+  "description": "Alder & Vale is an architecture and interior design studio crafting timeless residences, serene interiors, and landscape-integrated spaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

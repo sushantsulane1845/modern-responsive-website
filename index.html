@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alder &amp; Vale — Architecture &amp; Interior Design Studio</title>
+    <meta
+      name="description"
+      content="Alder &amp; Vale is an architecture and interior design studio crafting timeless residences, serene interiors, and landscape-integrated spaces."
+    />
+    <meta property="og:title" content="Alder &amp; Vale — Architecture &amp; Interior Design Studio" />
+    <meta
+      property="og:description"
+      content="Alder &amp; Vale is an architecture and interior design studio crafting timeless residences, serene interiors, and landscape-integrated spaces."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header sticky-top" id="siteHeader">
+      <nav class="navbar navbar-expand-lg site-navbar" aria-label="Primary Navigation">
+        <div class="container">
+          <a class="navbar-brand brand-wordmark" href="#home" aria-label="Alder &amp; Vale Home">
+            <svg
+              class="brand-mark"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.6" />
+              <path d="M9 21V11.5L14 7L19 11.5V21" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" />
+              <path d="M14 7V21" stroke="currentColor" stroke-width="1.4" />
+            </svg>
+            <span class="brand-name">Alder &amp; Vale</span>
+          </a>
+
+          <button
+            class="navbar-toggler site-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#primaryNavCollapse"
+            aria-controls="primaryNavCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <i class="bi bi-list toggler-icon" aria-hidden="true"></i>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-lg-between" id="primaryNavCollapse">
+            <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 nav-menu-list">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home" data-nav-link>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about" data-nav-link>About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services" data-nav-link>Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallery" data-nav-link>Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact" data-nav-link>Contact Us</a>
+              </li>
+            </ul>
+
+            <div class="nav-cta-wrap">
+              <a class="btn btn-emerald nav-cta-btn" href="#contact" data-scroll-target="#contact">
+                Book Consult
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section" id="home" aria-labelledby="heroHeading">
+        <div class="hero-media-layer">
+          <img
+            src="/src/assets/images/hero_courtyard_residence_1795084526694.jpg"
+            alt="Limestone and cedar courtyard residence framed by moss and fern gardens in morning daylight"
+            class="hero-bg-img"
+            referrerpolicy="no-referrer"
+          />
+          <div class="hero-3d-mount" id="hero3dMount"></div>
+          <div class="hero-scrim" aria-hidden="true"></div>
+        </div>
+
+        <div class="container position-relative hero-content-container">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-7 col-xl-6 hero-copy-col">
+              <p class="hero-kicker">Interactive 3D Pavilion · Architecture &amp; Interior Design</p>
+              <h1 class="hero-headline" id="heroHeading">
+                Architecture Shaped by Light, Stone, and Quiet Craft
+              </h1>
+              <p class="hero-lead">
+                Drag anywhere to orbit our 3D courtyard pavilion. We design bespoke residences,
+                serene interiors, and landscape-integrated sanctuaries built to endure.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-emerald btn-hero-primary" href="#about" data-scroll-target="#about">
+                  <span>Get Started</span>
+                  <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                </a>
+                <span class="hero-orbit-hint">
+                  <i class="bi bi-arrows-move" aria-hidden="true"></i>
+                  <span>Drag to orbit 3D model</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pavilion-3d-dock" id="pavilion3dDock" aria-label="3D Pavilion Controls">
+          <button
+            type="button"
+            class="dock-toggle-btn"
+            id="toggle3dDockBtn"
+            aria-expanded="true"
+            aria-controls="pavilion3dDockPanel"
+          >
+            <i class="bi bi-box dock-toggle-icon" aria-hidden="true"></i>
+            <span class="dock-toggle-text">Hide 3D Studio</span>
+            <i class="bi bi-chevron-down dock-chevron" aria-hidden="true"></i>
+          </button>
+
+          <div class="dock-panel" id="pavilion3dDockPanel" aria-hidden="false">
+            <div class="dock-group">
+              <span class="dock-group-label">View</span>
+              <div class="dock-btn-row" role="group" aria-label="Camera presets">
+                <button type="button" class="dock-btn is-active" data-cam-preset="exterior">
+                  Exterior
+                </button>
+                <button type="button" class="dock-btn" data-cam-preset="courtyard">
+                  Courtyard
+                </button>
+                <button type="button" class="dock-btn" data-cam-preset="aerial">
+                  Aerial Plan
+                </button>
+              </div>
+            </div>
+
+            <div class="dock-divider" aria-hidden="true"></div>
+
+            <div class="dock-group">
+              <div class="dock-btn-row" role="group" aria-label="3D Zoom and Orbit">
+                <button type="button" class="dock-btn" id="zoomIn3dBtn" aria-label="Zoom in 3D model">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="dock-btn" id="zoomOut3dBtn" aria-label="Zoom out 3D model">
+                  <i class="bi bi-zoom-out" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="dock-btn" id="autoOrbitBtn" aria-pressed="true">
+                  <i class="bi bi-arrow-repeat me-1" aria-hidden="true"></i>
+                  <span>Orbit</span>
+                </button>
+                <button type="button" class="dock-btn" id="explodeRoofBtn" aria-pressed="false">
+                  <i class="bi bi-layers me-1" aria-hidden="true"></i>
+                  <span class="explode-label">Explode Roof</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="dock-divider" aria-hidden="true"></div>
+
+            <div class="dock-group">
+              <span class="dock-group-label">Material</span>
+              <div class="dock-btn-row" role="group" aria-label="Facade materials">
+                <button type="button" class="dock-btn is-active" data-mat-preset="limestone">
+                  Limestone
+                </button>
+                <button type="button" class="dock-btn" data-mat-preset="cedar">
+                  Charred Cedar
+                </button>
+                <button type="button" class="dock-btn" data-mat-preset="concrete">
+                  Concrete
+                </button>
+              </div>
+            </div>
+
+            <div class="dock-divider" aria-hidden="true"></div>
+
+            <div class="dock-group">
+              <span class="dock-group-label">Light</span>
+              <div class="dock-btn-row" role="group" aria-label="Lighting moods">
+                <button type="button" class="dock-btn is-active" data-mood-preset="morning">
+                  Morning
+                </button>
+                <button type="button" class="dock-btn" data-mood-preset="golden">
+                  Golden Hour
+                </button>
+                <button type="button" class="dock-btn" data-mood-preset="twilight">
+                  Twilight
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section section-spacing" id="about" aria-labelledby="aboutHeading">
+        <div class="container">
+          <div class="row g-4 g-lg-5 align-items-stretch">
+            <div class="col-12 col-lg-6">
+              <div class="about-media-stage h-100">
+                <div class="about-media-frame h-100">
+                  <img
+                    src="/src/assets/images/about_design_atelier_1795084528612.jpg"
+                    alt="Architect sketching plans on a white oak drafting table surrounded by limestone and linen samples"
+                    class="about-img"
+                    referrerpolicy="no-referrer"
+                  />
+                  <div class="media-fallback-caption" aria-hidden="true">
+                    <i class="bi bi-compass"></i>
+                    <span>Alder &amp; Vale Studio Atelier</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+              <div class="about-copy-block">
+                <p class="section-kicker">About the Studio</p>
+                <h2 class="section-heading" id="aboutHeading">
+                  Material Honesty and Site-Responsive Form
+                </h2>
+                <p class="section-body">
+                  Founded in 2008, Alder &amp; Vale approaches every commission from the ground up.
+                  Rather than imposing a signature look, our architects and interior designers study
+                  prevailing winds, sun angles, and native geology to craft spaces that feel rooted
+                  in their surroundings.
+                </p>
+                <p class="section-body">
+                  From hand-selected limestone hearths to custom white oak joinery, every threshold
+                  is detailed in-house so structure, light, and furniture belong to a single calm
+                  composition.
+                </p>
+
+                <div class="material-palette-row" aria-label="Signature Studio Materials">
+                  <div class="material-swatch-item">
+                    <span class="swatch-cube swatch-limestone" aria-hidden="true"></span>
+                    <span class="swatch-name">Honed Limestone</span>
+                  </div>
+                  <div class="material-swatch-item">
+                    <span class="swatch-cube swatch-cedar" aria-hidden="true"></span>
+                    <span class="swatch-name">Western Cedar</span>
+                  </div>
+                  <div class="material-swatch-item">
+                    <span class="swatch-cube swatch-bronze" aria-hidden="true"></span>
+                    <span class="swatch-name">Aged Bronze</span>
+                  </div>
+                  <div class="material-swatch-item">
+                    <span class="swatch-cube swatch-emerald" aria-hidden="true"></span>
+                    <span class="swatch-name">Moss &amp; Basalt</span>
+                  </div>
+                </div>
+
+                <div class="collapse about-extra-content" id="aboutMoreContent">
+                  <div class="about-extra-inner">
+                    <h3 class="about-subhead">Our Three-Stage Studio Methodology</h3>
+                    <ul class="about-principle-list">
+                      <li>
+                        <strong>01. Site &amp; Daylight Mapping:</strong> Seasonal solar studies and
+                        topographic surveys guide building orientation and natural cross-ventilation.
+                      </li>
+                      <li>
+                        <strong>02. Tactile Material Curation:</strong> Local quarry stone, sustainably
+                        harvested timber, and breathable lime plasters tested in natural daylight.
+                      </li>
+                      <li>
+                        <strong>03. End-to-End Stewardship:</strong> Integrated architectural
+                        documentation, bespoke millwork detailing, and on-site craft oversight through
+                        completion.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="about-actions">
+                  <button
+                    class="btn btn-outline-emerald"
+                    type="button"
+                    id="readMoreBtn"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#aboutMoreContent"
+                    aria-expanded="false"
+                    aria-controls="aboutMoreContent"
+                  >
+                    <span class="read-more-label">Read More</span>
+                    <i class="bi bi-chevron-down ms-2 read-more-icon" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="studio-metrics-strip">
+            <div class="row g-0">
+              <div class="col-6 col-md-3 metric-cell">
+                <span class="metric-value">18+</span>
+                <span class="metric-label">Years in Practice</span>
+              </div>
+              <div class="col-6 col-md-3 metric-cell">
+                <span class="metric-value">64</span>
+                <span class="metric-label">Completed Residences</span>
+              </div>
+              <div class="col-6 col-md-3 metric-cell">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Custom Millwork Detailing</span>
+              </div>
+              <div class="col-6 col-md-3 metric-cell">
+                <span class="metric-value">12</span>
+                <span class="metric-label">Regional Design Honors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-section section-spacing" id="services" aria-labelledby="servicesHeading">
+        <div class="container">
+          <div class="row justify-content-between align-items-end mb-4 mb-lg-5 g-3">
+            <div class="col-12 col-lg-7">
+              <p class="section-kicker">Our Services</p>
+              <h2 class="section-heading mb-0" id="servicesHeading">
+                Disciplined Craft Across Every Scale
+              </h2>
+            </div>
+            <div class="col-12 col-lg-4">
+              <p class="section-lead-note mb-0">
+                Integrated architectural, interior, and material direction tailored for residential
+                and boutique hospitality commissions.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-md-6">
+              <article class="service-card h-100">
+                <div class="service-card-top">
+                  <span class="service-index">01</span>
+                  <div class="service-icon-box" aria-hidden="true">
+                    <i class="bi bi-compass"></i>
+                  </div>
+                </div>
+                <h3 class="service-title">Architectural Design</h3>
+                <p class="service-desc">
+                  Ground-up custom residences and pavilions shaped around topography, passive solar
+                  orientation, and enduring structural clarity from concept through permitting.
+                </p>
+                <div class="service-card-footer">
+                  <p class="service-meta">
+                    Site Feasibility · Schematic Massing · Construction Administration
+                  </p>
+                  <a
+                    href="#contact"
+                    class="service-inquire-link"
+                    data-service-inquiry="Architectural Design"
+                  >
+                    <span>Discuss Scope</span>
+                    <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="service-card h-100">
+                <div class="service-card-top">
+                  <span class="service-index">02</span>
+                  <div class="service-icon-box" aria-hidden="true">
+                    <i class="bi bi-layers"></i>
+                  </div>
+                </div>
+                <h3 class="service-title">Interior Architecture</h3>
+                <p class="service-desc">
+                  Cohesive spatial planning, bespoke oak cabinetry, stone fabrication detailing, and
+                  curated furnishings that bring warmth and acoustic calm to daily rituals.
+                </p>
+                <div class="service-card-footer">
+                  <p class="service-meta">
+                    Bespoke Joinery · Lighting Design · FF&amp;E Curation
+                  </p>
+                  <a
+                    href="#contact"
+                    class="service-inquire-link"
+                    data-service-inquiry="Interior Architecture"
+                  >
+                    <span>Discuss Scope</span>
+                    <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="service-card h-100">
+                <div class="service-card-top">
+                  <span class="service-index">03</span>
+                  <div class="service-icon-box" aria-hidden="true">
+                    <i class="bi bi-building"></i>
+                  </div>
+                </div>
+                <h3 class="service-title">Adaptive Reuse &amp; Restoration</h3>
+                <p class="service-desc">
+                  Thoughtful renewal of historic brick, timber, and mid-century structures—honoring
+                  original architectural character while upgrading thermal performance and flow.
+                </p>
+                <div class="service-card-footer">
+                  <p class="service-meta">
+                    Heritage Assessment · Structural Integration · Envelope Upgrade
+                  </p>
+                  <a
+                    href="#contact"
+                    class="service-inquire-link"
+                    data-service-inquiry="Adaptive Reuse & Restoration"
+                  >
+                    <span>Discuss Scope</span>
+                    <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="service-card h-100">
+                <div class="service-card-top">
+                  <span class="service-index">04</span>
+                  <div class="service-icon-box" aria-hidden="true">
+                    <i class="bi bi-tree"></i>
+                  </div>
+                </div>
+                <h3 class="service-title">Landscape &amp; Courtyard Integration</h3>
+                <p class="service-desc">
+                  Seamless thresholds connecting interior living rooms with native fern gardens,
+                  reflective water courts, and shaded stone terraces for year-round outdoor living.
+                </p>
+                <div class="service-card-footer">
+                  <p class="service-meta">
+                    Courtyard Planning · Native Planting · Outdoor Structures
+                  </p>
+                  <a
+                    href="#contact"
+                    class="service-inquire-link"
+                    data-service-inquiry="Landscape & Courtyard Integration"
+                  >
+                    <span>Discuss Scope</span>
+                    <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section section-spacing" id="gallery" aria-labelledby="galleryHeading">
+        <div class="container">
+          <div class="row justify-content-between align-items-end mb-4 mb-lg-5 g-3">
+            <div class="col-12 col-lg-7">
+              <p class="section-kicker">Selected Works</p>
+              <h2 class="section-heading mb-0" id="galleryHeading">
+                Architectural &amp; Interior Portfolio
+              </h2>
+            </div>
+            <div class="col-12 col-lg-4">
+              <p class="section-lead-note mb-0">
+                Hover over any study to reveal project typology, location, and primary material
+                palette.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+              <figure class="gallery-card" tabindex="0">
+                <img
+                  src="/src/assets/images/gallery_pavilion_living_1795084528313.jpg"
+                  alt="Cedar Pavilion Living Room with carved limestone hearth and garden glass doors"
+                  class="gallery-img"
+                  referrerpolicy="no-referrer"
+                />
+                <figcaption class="gallery-caption">
+                  <span class="gallery-project-meta">Residential Interior · Portland, OR</span>
+                  <h3 class="gallery-project-title">Cedar Courtyard Pavilion</h3>
+                  <p class="gallery-project-detail">Carved Limestone, Walnut Joinery &amp; Glass</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <figure class="gallery-card" tabindex="0">
+                <img
+                  src="/src/assets/images/gallery_timber_kitchen_1795084529899.jpg"
+                  alt="Modern architectural kitchen with honed travertine island and fluted oak cabinets"
+                  class="gallery-img"
+                  referrerpolicy="no-referrer"
+                />
+                <figcaption class="gallery-caption">
+                  <span class="gallery-project-meta">Bespoke Kitchen · Bainbridge Island</span>
+                  <h3 class="gallery-project-title">Vashon Travertine House</h3>
+                  <p class="gallery-project-detail">Honed Travertine &amp; Fluted White Oak</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <figure class="gallery-card" tabindex="0">
+                <img
+                  src="/src/assets/images/gallery_courtyard_library_1795084530148.jpg"
+                  alt="Curved plaster ceiling residential library with floor-to-ceiling oak bookshelves"
+                  class="gallery-img"
+                  referrerpolicy="no-referrer"
+                />
+                <figcaption class="gallery-caption">
+                  <span class="gallery-project-meta">Private Library · Seattle, WA</span>
+                  <h3 class="gallery-project-title">Montlake Study &amp; Archive</h3>
+                  <p class="gallery-project-detail">Curved Lime Plaster &amp; Quarter-Sawn Oak</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <figure class="gallery-card" tabindex="0">
+                <img
+                  src="/src/assets/images/gallery_botanical_spa_1795084529918.jpg"
+                  alt="Sculpted stone soaking tub beside floor-to-ceiling window framing a fern garden"
+                  class="gallery-img"
+                  referrerpolicy="no-referrer"
+                />
+                <figcaption class="gallery-caption">
+                  <span class="gallery-project-meta">Bath Sanctuary · Hood River, OR</span>
+                  <h3 class="gallery-project-title">Fern Court Bath Suite</h3>
+                  <p class="gallery-project-detail">Carved Basalt, Limestone &amp; Moss Garden</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <figure class="gallery-card" tabindex="0">
+                <img
+                  src="/src/assets/images/gallery_heritage_loft_1795084529719.jpg"
+                  alt="Adaptive reuse heritage brick and timber loft with black steel partitions"
+                  class="gallery-img"
+                  referrerpolicy="no-referrer"
+                />
+                <figcaption class="gallery-caption">
+                  <span class="gallery-project-meta">Adaptive Reuse · Pearl District</span>
+                  <h3 class="gallery-project-title">Mercantile Timber Loft</h3>
+                  <p class="gallery-project-detail">Lime-Washed Brick &amp; Reclaimed Fir</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <figure class="gallery-card" tabindex="0">
+                <img
+                  src="/src/assets/images/gallery_forest_retreat_1795084530907.jpg"
+                  alt="Cantilevered cedar and concrete forest cabin glowing warmly at twilight"
+                  class="gallery-img"
+                  referrerpolicy="no-referrer"
+                />
+                <figcaption class="gallery-caption">
+                  <span class="gallery-project-meta">New Residence · Cascade Foothills</span>
+                  <h3 class="gallery-project-title">Canopy Ridge Retreat</h3>
+                  <p class="gallery-project-detail">Western Red Cedar &amp; Board-Formed Concrete</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section section-spacing" id="contact" aria-labelledby="contactHeading">
+        <div class="container">
+          <div class="row g-4 g-lg-5 align-items-start">
+            <div class="col-12 col-lg-5">
+              <p class="section-kicker">Start a Conversation</p>
+              <h2 class="section-heading" id="contactHeading">
+                Discuss Your Site or Interior Commission
+              </h2>
+              <p class="section-body">
+                We take on a selective number of residential and hospitality projects each year so
+                our principals remain deeply involved in every detail. Share your timeline and
+                project scope, and we will schedule an introductory studio consultation.
+              </p>
+
+              <div class="contact-details-list">
+                <div class="contact-detail-item">
+                  <span class="contact-detail-label">Studio Address</span>
+                  <span class="contact-detail-value">
+                    418 NW 11th Avenue, Suite 300, Portland, OR 97209
+                  </span>
+                </div>
+                <div class="contact-detail-item">
+                  <span class="contact-detail-label">Direct Inquiries</span>
+                  <a class="contact-detail-link" href="mailto:studio@alderandvale.com">
+                    studio@alderandvale.com
+                  </a>
+                </div>
+                <div class="contact-detail-item">
+                  <span class="contact-detail-label">Telephone</span>
+                  <a class="contact-detail-link" href="tel:+15035550194">
+                    +1 (503) 555-0194
+                  </a>
+                </div>
+                <div class="contact-detail-item">
+                  <span class="contact-detail-label">Studio Hours</span>
+                  <span class="contact-detail-value">Monday – Friday, 9:00 AM – 6:00 PM PST</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+              <div class="contact-form-panel">
+                <div
+                  class="inquiry-confirmation d-none"
+                  id="inquiryConfirmation"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <div class="confirmation-icon-wrap" aria-hidden="true">
+                    <i class="bi bi-check2-circle"></i>
+                  </div>
+                  <h3 class="confirmation-title">Inquiry Received</h3>
+                  <p class="confirmation-text" id="confirmationSummary">
+                    Thank you for reaching out to Alder &amp; Vale. A studio principal will review
+                    your brief and respond within two business days.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-outline-emerald"
+                    id="resetInquiryBtn"
+                  >
+                    Send Another Inquiry
+                  </button>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <label for="contactName" class="form-label studio-label">
+                        Full Name <span class="required-mark" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control studio-input"
+                        id="contactName"
+                        name="name"
+                        placeholder="Clara Hendrickson"
+                        required
+                        minlength="2"
+                        autocomplete="name"
+                      />
+                      <div class="invalid-feedback">Please enter your full name (at least 2 characters).</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                      <label for="contactEmail" class="form-label studio-label">
+                        Email Address <span class="required-mark" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        class="form-control studio-input"
+                        id="contactEmail"
+                        name="email"
+                        placeholder="clara@example.com"
+                        required
+                        autocomplete="email"
+                      />
+                      <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="contactPhone" class="form-label studio-label">
+                        Phone Number <span class="required-mark" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        class="form-control studio-input"
+                        id="contactPhone"
+                        name="phone"
+                        placeholder="+1 (503) 555-0148"
+                        required
+                        autocomplete="tel"
+                      />
+                      <div class="invalid-feedback">Please enter a valid phone number (at least 7 digits).</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="contactMessage" class="form-label studio-label">
+                        Project Message <span class="required-mark" aria-hidden="true">*</span>
+                      </label>
+                      <textarea
+                        class="form-control studio-input studio-textarea"
+                        id="contactMessage"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us about your site location, approximate timeline, and architectural or interior goals..."
+                        required
+                        minlength="12"
+                      ></textarea>
+                      <div class="invalid-feedback">
+                        Please share a brief note about your project (at least 12 characters).
+                      </div>
+                    </div>
+
+                    <div class="col-12 pt-2">
+                      <button type="submit" class="btn btn-emerald btn-submit-inquiry">
+                        <span>Submit Inquiry</span>
+                        <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4 g-lg-5 pb-5 footer-top-row">
+          <div class="col-12 col-lg-4">
+            <a class="footer-brand" href="#home">
+              <svg
+                class="brand-mark"
+                width="26"
+                height="26"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect x="2" y="2" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.6" />
+                <path d="M9 21V11.5L14 7L19 11.5V21" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" />
+                <path d="M14 7V21" stroke="currentColor" stroke-width="1.4" />
+              </svg>
+              <span>Alder &amp; Vale</span>
+            </a>
+            <p class="footer-summary">
+              Architecture and interior design studio crafting tactile residences, adaptive reuse
+              spaces, and quiet courtyard landscapes across the Pacific Northwest.
+            </p>
+            <div class="footer-social-links" aria-label="Social Media">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-link"
+                aria-label="Instagram"
+              >
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://pinterest.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-link"
+                aria-label="Pinterest"
+              >
+                <i class="bi bi-pinterest" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-link"
+                aria-label="LinkedIn"
+              >
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-link"
+                aria-label="YouTube"
+              >
+                <i class="bi bi-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2 offset-lg-1">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-link-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 class="footer-heading">Disciplines</h3>
+            <ul class="footer-link-list">
+              <li><a href="#services">Architectural Design</a></li>
+              <li><a href="#services">Interior Architecture</a></li>
+              <li><a href="#services">Adaptive Reuse</a></li>
+              <li><a href="#services">Landscape Integration</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4 col-lg-3">
+            <h3 class="footer-heading">Contact Information</h3>
+            <ul class="footer-contact-list">
+              <li>
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <span>418 NW 11th Ave, Suite 300, Portland, OR</span>
+              </li>
+              <li>
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+                <a href="tel:+15035550194">+1 (503) 555-0194</a>
+              </li>
+              <li>
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                <a href="mailto:studio@alderandvale.com">studio@alderandvale.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <p class="footer-copyright mb-0">
+            &copy; <span id="currentYear">2026</span> Alder &amp; Vale Architecture Studio. All rights
+            reserved.
+          </p>
+          <a href="#home" class="back-to-top-link">
+            <span>Back to top</span>
+            <i class="bi bi-arrow-up ms-1" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>
